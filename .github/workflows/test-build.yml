@@ -84,3 +84,25 @@ jobs:
           repo_release: 'walnascar'
     needs: walnascar-repo
 
+  whinlatter-repo:
+    runs-on: ubuntu-24.04
+    continue-on-error: true
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/bitbake-repo
+        with:
+          repo_release: 'whinlatter'
+
+  whinlatter-raspberrypi3-mesa-weston-wpe-2-50:
+    runs-on: self-hosted
+    continue-on-error: true
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/bitbake-build
+        with:
+          bitbake_source: 'raspberrypi3-mesa-wpe-2-50 raspberrypi3-mesa poky layers.raspberrypi.webkit conf_v4.wpe-2_50'
+          repo_release: 'whinlatter'
+    needs: whinlatter-repo
+
