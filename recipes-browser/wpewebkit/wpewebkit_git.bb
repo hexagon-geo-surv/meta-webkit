@@ -1,8 +1,8 @@
 require wpewebkit.inc
 
 SRC_URI = " \
-    git://github.com/WebKit/WebKit;protocol=https;branch=main \
+    git://github.com/WebKit/WebKit;protocol=https;branch=webkitglib/2.52 \
     file://0001-Workaround-compiler-bug-for-inlining.patch \
 "
-SRCREV = "ff71a3d8c503a022bdcc94955a78a8d9aa7bbab3"
+SRCREV = "3a9a53db2dbd2ac5bfa43d64014fabf3d504c245"
 S = "${WORKDIR}/git"
