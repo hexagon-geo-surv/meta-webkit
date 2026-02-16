@@ -11,11 +11,7 @@ DEPENDS:append = " glib-2.0-native wayland-native libdrm virtual/libgbm virtual/
 SRC_URI = "git://git@github.com/Igalia/wpe-testbed-wayland.git;protocol=ssh;branch=main"
 SRCREV = "d7ac4675d0392bf843526700fdae9f0fd4c84756"
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 
 PACKAGE_ARCH = "${TUNE_PKGARCH}"
 

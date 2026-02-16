@@ -19,11 +19,7 @@ PR = "r0"
 BPV = "1.7.3"
 PV = "${BPV}"
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 
 RUBY_GEM_NAME = "highline"
 RUBY_BUILD_GEMS = "${RUBY_GEM_NAME}.gemspec"

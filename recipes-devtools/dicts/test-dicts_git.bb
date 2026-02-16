@@ -12,11 +12,7 @@ PV = "${BPV}"
 SRC_URI = "git://github.com/mrobinson/webkitgtk-test-dicts.git;protocol=https;branch=master"
 SRCREV = "a63aa52f09ddbf2532304a5751d22e5712299b0d"
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"

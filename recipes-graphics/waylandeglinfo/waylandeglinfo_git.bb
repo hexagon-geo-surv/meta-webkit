@@ -13,9 +13,5 @@ SRCREV = "b295363ab4e858fe4cfb32ee4e71a177e939b691"
 
 inherit cmake pkgconfig
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 

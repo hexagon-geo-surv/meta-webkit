@@ -15,11 +15,7 @@ SRC_URI = "git://github.com/libjxl/libjxl.git;branch=v0.8.x;protocol=https;rev=c
            file://CVE-2024-11403.patch \
            "
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE = " -DBUILD_TESTING=OFF \
     -DJPEGXL_ENABLE_FUZZERS=OFF \

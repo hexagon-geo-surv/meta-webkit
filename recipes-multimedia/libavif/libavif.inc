@@ -16,11 +16,7 @@ SRC_URI = "git://github.com/AOMediaCodec/libavif.git;protocol=https;branch=main 
            "
 SRCREV = "6ab53189045e7a6fe0bd93d14977b2a4f8efa5e9"
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 
 inherit cmake
 
