@@ -16,9 +16,5 @@ RPROVIDES:${PN}:append:class-devupstream = " virtual-wpebackend"
 
 BBCLASSEXTEND += "devupstream:target"
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 

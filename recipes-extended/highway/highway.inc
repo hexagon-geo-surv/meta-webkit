@@ -12,11 +12,7 @@ SRCREV = "46e365d6770f5d7a4240d8ac9d8e928a520478ea"
 
 inherit cmake
 
-# nooelint: oelint.task.noanonpython - required for backward compatibility with scarthgap
-python __anonymous() {
-    if not d.getVar('UNPACKDIR'):
-        d.setVar('S', d.getVar('WORKDIR') + '/git')
-}
+S = "${WORKDIR}/git"
 EXTRA_OECMAKE = " -DBUILD_TESTING=OFF \
     -DHWY_WARNINGS_ARE_ERRORS=OFF \
     -DHWY_ENABLE_EXAMPLES=OFF \
