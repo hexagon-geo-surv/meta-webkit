@@ -4,5 +4,5 @@ SRC_URI = " \
     git://github.com/WebKit/WebKit;protocol=https;branch=webkitglib/2.52 \
     file://0001-Workaround-compiler-bug-for-inlining.patch \
 "
-SRCREV = "3a9a53db2dbd2ac5bfa43d64014fabf3d504c245"
+SRCREV = "c15b62ea8c6be03806500f06a5bae0ec63d5b682"
 S = "${WORKDIR}/git"
