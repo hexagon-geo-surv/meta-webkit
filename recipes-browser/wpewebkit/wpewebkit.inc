@@ -82,7 +82,7 @@ PACKAGECONFIG[wpe-1-1-api] = "-DENABLE_WPE_1_1_API:BOOL=ON,-DENABLE_WPE_1_1_API:
 # Build option for WPE platform API
 PACKAGECONFIG[wpe-platform] = "-DENABLE_WPE_PLATFORM=ON,-DENABLE_WPE_PLATFORM=OFF,libinput wayland-native"
 
-EXTRA_OECMAKE = " -DPORT=WPE -G Ninja -DENABLE_MALLOC_HEAP_BREAKDOWN=ON"
+EXTRA_OECMAKE = " -DPORT=WPE -G Ninja"
 
 # TODO: documentation and introspection are disabled by default because the are
 # causing cross-compiling build errors
